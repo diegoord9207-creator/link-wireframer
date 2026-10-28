@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoLadrillos Lab: wireframe</title>
+<style>
+:root{--ink:#2a2622;--paper:#f3f4ef;--soil:#7a4b2e;--moss:#4f6b3a;--sand:#d9c7a3;--line:#cfcbbf;--grey:#e6e5dd;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--soil)}
+a:focus-visible{outline:3px solid var(--moss);outline-offset:2px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2}
+header{background:var(--soil);color:var(--white);padding:44px 24px 32px}
+.wrap{max-width:1100px;margin:0 auto}
+h1{font-size:clamp(1.9rem,5vw,2.8rem);margin:0 0 8px}
+header p{margin:4px 0;max-width:68ch;color:#f6ece2}
+main{padding:24px}
+.warn{border-left:5px solid var(--sand);background:var(--white);padding:10px 14px;max-width:78ch;font-size:.95rem;margin:0 0 24px}
+.flow{display:flex;flex-wrap:wrap;gap:6px 0;align-items:center;margin:0 0 32px;padding:0;list-style:none;font-size:.9rem}
+.flow li{background:var(--white);border:1px solid var(--line);border-radius:999px;padding:3px 12px}
+.flow li+li::before{content:"\2192";margin:0 8px 0 2px;color:var(--soil)}
+.flow li+li{border:0;background:none;padding-left:0}
+.flow li a{font-weight:600}
+.screen{display:grid;grid-template-columns:minmax(250px,300px) 1fr;gap:28px;padding:28px 0;border-top:1px solid var(--line);scroll-margin-top:12px}
+.screen h2{margin:0 0 4px;font-size:1.35rem;color:var(--soil)}
+.purpose{margin:0 0 10px;max-width:60ch}
+.info h3{font-size:1rem;margin:14px 0 4px}
+.info ul{margin:0;padding-left:1.2rem}
+.info li{margin:2px 0}
+.nav{font-size:.93rem;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:8px 12px;margin-top:12px}
+.phone{border:3px solid var(--ink);border-radius:22px;background:var(--white);overflow:hidden;min-height:440px;display:flex;flex-direction:column;font-size:.85rem;line-height:1.35}
+.bar{background:var(--moss);color:var(--white);padding:8px 12px;font-weight:600;display:flex;justify-content:space-between}
+.body{padding:12px;display:flex;flex-direction:column;gap:9px;flex:1}
+.body h4{margin:0;font:700 1.05rem Georgia,serif}
+.ph{border:2px dashed #9d9a8f;background:var(--grey);border-radius:6px;padding:16px 8px;text-align:center;color:#55514a;font-size:.78rem}
+.btn{border:2px solid var(--soil);background:var(--soil);color:var(--white);border-radius:8px;padding:10px;text-align:center;font-weight:600}
+.btn.alt{background:var(--white);color:var(--soil)}
+.foot{margin-top:auto}
+.chip{border:1px solid #9d9a8f;border-radius:999px;padding:4px 10px;display:inline-block;margin:0 4px 4px 0;font-size:.78rem}
+.chip.on{background:var(--sand);border-color:var(--soil);font-weight:600}
+.stop{display:flex;gap:8px;align-items:center;border:1px solid var(--line);border-radius:8px;padding:10px}
+.dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--moss);flex:none}
+.dot.done{background:var(--moss)}
+.track{height:10px;background:var(--grey);border-radius:5px;position:relative}
+.track i{position:absolute;inset:0 auto 0 0;background:var(--soil);border-radius:5px}
+.field{border:1px solid #9d9a8f;border-radius:6px;padding:7px 8px;color:#55514a;min-height:34px}
+.fb{border-left:4px solid var(--moss);background:#eef1e8;padding:6px 8px;font-size:.8rem}
+.tabs{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:8px 12px;font-size:.8rem}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:12px 0 32px}
+.principles div{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:.95rem}
+.principles h3{margin:0 0 4px;font-size:1rem;color:var(--soil)}
+footer{padding:24px;text-align:center;font-size:.88rem;color:#5d584f}
+@media (max-width:760px){.screen{grid-template-columns:1fr}.phone{max-width:320px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>EcoLadrillos Lab: wireframe</h1>
+<p>Bocetos de las seis pantallas previstas para la app, con títulos, textos clave, botones y navegación. Complementan el <a href="index.html" style="color:#fff">diseño instruccional</a>.</p>
+<p>Autor: Diego Iván Ordoñez Vargas. Especialización en Didáctica y TIC, Universidad de Cartagena.</p>
+</div></header>
+<main class="wrap">
+<p class="warn">Esto es un wireframe, no una app terminada. Muestra la estructura y el recorrido previstos. Los recuadros punteados indican dónde irían fotos o videos, y los textos de retroalimentación son ejemplos de cómo respondería el simulador didáctico.</p>
+
+<ol class="flow" aria-label="Recorrido del estudiante">
+<li><a href="#p1">1 Inicio</a></li><li><a href="#p2">2 Mi ruta</a></li><li><a href="#p3">3 Explora</a></li><li><a href="#p4">4 Aprende</a></li><li><a href="#p5">5 Practica</a></li><li><a href="#p6">6 Mi ficha</a></li>
+</ol>
+
+<article class="screen" id="p1">
+<div class="phone" role="img" aria-label="Boceto de la pantalla de inicio"><div class="bar"><span>EcoLadrillos Lab</span><span>≡</span></div><div class="body">
+<h4>Diseña tu propio ecoladrillo</h4>
+<div class="ph">[Foto: ladrillo con cascarilla de arroz]</div>
+<div>Observa, prueba mezclas y explica tu decisión.</div>
+<div class="field">Tu nombre</div>
+<div class="btn foot">Comenzar</div>
+</div></div>
+<div class="info"><h2>Pantalla 1. Inicio</h2>
+<p class="purpose">Presentar el reto y registrar al estudiante, sin pasos innecesarios.</p>
+<h3>Elementos</h3><ul><li>Título y frase del reto</li><li>Imagen de apoyo</li><li>Campo de nombre</li><li>Botón principal "Comenzar"</li></ul>
+<div class="nav">Siguiente: <a href="#p2">2 Mi ruta</a>. No hay pantalla anterior.</div></div>
+</article>
+
+<article class="screen" id="p2">
+<div class="phone" role="img" aria-label="Boceto de la pantalla de ruta"><div class="bar"><span>Mi ruta</span><span>1 de 3</span></div><div class="body">
+<h4>Tres estaciones</h4>
+<div class="stop"><span class="dot done"></span>Explora</div>
+<div class="stop"><span class="dot"></span>Aprende</div>
+<div class="stop"><span class="dot"></span>Practica</div>
+<div class="track"><i style="width:33%"></i></div>
+<div>Completaste la estación 1 de 3.</div>
+<div class="btn foot">Continuar</div>
+</div></div>
+<div class="info"><h2>Pantalla 2. Mi ruta</h2>
+<p class="purpose">Mostrar la secuencia (exploración, aprendizaje y práctica) y el avance del estudiante. Es el punto de seguimiento.</p>
+<h3>Elementos</h3><ul><li>Tres estaciones con estado (pendiente o lista)</li><li>Barra de progreso con texto</li><li>Botón "Continuar" hacia la siguiente estación pendiente</li></ul>
+<div class="nav">Anterior: <a href="#p1">1 Inicio</a>. Siguiente: <a href="#p3">3 Explora</a>. Desde aquí se vuelve a cualquier estación ya completada.</div></div>
+</article>
+
+<article class="screen" id="p3">
+<div class="phone" role="img" aria-label="Boceto de la pantalla Explora"><div class="bar"><span>‹ Explora</span><span>1 de 3</span></div><div class="body">
+<h4>¿Qué hay en tu tierra?</h4>
+<div class="ph">[Foto: muestra de tierra o foto del estudiante]</div>
+<div>Moja un puñado de tierra y apriétalo. ¿Qué pasa?</div>
+<div><span class="chip">Se desmorona</span><span class="chip on">Se pega</span><span class="chip">Se vuelve barro</span></div>
+<div class="field">Escribe otra observación</div>
+<div class="btn foot">Guardar observación</div>
+</div></div>
+<div class="info"><h2>Pantalla 3. Explora</h2>
+<p class="purpose">Activar saberes previos con una observación propia, antes de recibir información.</p>
+<h3>Elementos</h3><ul><li>Pregunta detonante</li><li>Opciones de respuesta y campo libre</li><li>Opción de subir una foto</li><li>Botón "Guardar observación"</li></ul>
+<div class="nav">Anterior: <a href="#p2">2 Mi ruta</a>. Siguiente: <a href="#p4">4 Aprende</a>.</div></div>
+</article>
+
+<article class="screen" id="p4">
+<div class="phone" role="img" aria-label="Boceto de la pantalla Aprende"><div class="bar"><span>‹ Aprende</span><span>2 de 3</span></div><div class="body">
+<h4>Qué aporta cada componente</h4>
+<div><span class="chip on">Tierra</span><span class="chip">Cemento</span><span class="chip">Cascarilla</span><span class="chip">Estiércol</span></div>
+<div class="ph">[Video corto o ilustración]</div>
+<div>Texto breve sobre el componente elegido y su propiedad principal.</div>
+<div class="field">Pregunta: ¿qué cambia si falta este componente?</div>
+<div class="fb">Retroalimentación inmediata con una pista.</div>
+<div class="btn foot">Siguiente componente</div>
+</div></div>
+<div class="info"><h2>Pantalla 4. Aprende</h2>
+<p class="purpose">Explicar las propiedades de cada componente y la idea de aprovechar residuos, con una pregunta de comprensión por componente.</p>
+<h3>Elementos</h3><ul><li>Pestañas por componente</li><li>Video o ilustración con transcripción</li><li>Pregunta con retroalimentación inmediata</li><li>Botón para pasar al siguiente componente</li></ul>
+<div class="nav">Anterior: <a href="#p3">3 Explora</a>. Siguiente: <a href="#p5">5 Practica</a>, cuando se vean los cuatro componentes.</div></div>
+</article>
+
+<article class="screen" id="p5">
+<div class="phone" role="img" aria-label="Boceto de la pantalla Practica"><div class="bar"><span>‹ Practica</span><span>3 de 3</span></div><div class="body">
+<h4>Prueba tu mezcla</h4>
+<div>Tierra<div class="track"><i style="width:45%"></i></div></div>
+<div>Cemento<div class="track"><i style="width:15%"></i></div></div>
+<div>Cascarilla<div class="track"><i style="width:25%"></i></div></div>
+<div>Estiércol<div class="track"><i style="width:15%"></i></div></div>
+<div class="fb">Ejemplo de mensaje didáctico sobre la mezcla probada.</div>
+<div class="tabs"><span>Intento 2 de 5</span><span>Ver historial</span></div>
+<div class="btn foot">Probar de nuevo</div>
+<div class="btn alt">Ir a mi ficha</div>
+</div></div>
+<div class="info"><h2>Pantalla 5. Practica</h2>
+<p class="purpose">Cambiar proporciones, comparar intentos y decidir. Es un simulador didáctico, sin valor de ensayo técnico.</p>
+<h3>Elementos</h3><ul><li>Controles deslizantes por componente, con valor numérico visible</li><li>Mensaje de retroalimentación en texto</li><li>Contador e historial de intentos</li><li>Botones "Probar de nuevo" e "Ir a mi ficha"</li></ul>
+<div class="nav">Anterior: <a href="#p4">4 Aprende</a>. Siguiente: <a href="#p6">6 Mi ficha</a>.</div></div>
+</article>
+
+<article class="screen" id="p6">
+<div class="phone" role="img" aria-label="Boceto de la pantalla Mi ficha"><div class="bar"><span>‹ Mi ficha</span><span>Evidencia</span></div><div class="body">
+<h4>Ficha de diseño</h4>
+<div class="field">Mi mezcla final (componentes y proporciones)</div>
+<div class="field">Por qué la elegí</div>
+<div class="field">Qué mezcla descarté y por qué</div>
+<div class="field">Qué residuos aprovecha mi mezcla</div>
+<div class="btn foot">Descargar ficha</div>
+</div></div>
+<div class="info"><h2>Pantalla 6. Mi ficha</h2>
+<p class="purpose">Producir la evidencia de aprendizaje que se valora con la rúbrica.</p>
+<h3>Elementos</h3><ul><li>Cuatro campos de texto con ayudas breves</li><li>Datos de los intentos precargados desde el historial</li><li>Botón "Descargar ficha"</li></ul>
+<div class="nav">Anterior: <a href="#p5">5 Practica</a>. Es la última pantalla; desde aquí se vuelve a <a href="#p2">2 Mi ruta</a>.</div></div>
+</article>
+
+<h2>Criterios de diseño</h2>
+<div class="principles">
+<div><h3>Usabilidad</h3>Un solo botón principal por pantalla, navegación lineal con acceso a la ruta y textos cortos.</div>
+<div><h3>Experiencia de usuario</h3>Progreso visible, contenido que funciona sin conexión después de la primera descarga y tareas de pocos pasos.</div>
+<div><h3>Accesibilidad</h3>Contraste alto, retroalimentación en texto (no solo en color), botones grandes para pantallas táctiles y transcripción de los videos.</div>
+<div><h3>Comunicación educativa</h3>Cada pantalla corresponde a un momento de la secuencia y a una parte de la evidencia, como se ve en el <a href="index.html#funciones">diseño instruccional</a>.</div>
+</div>
+</main>
+<footer>EcoLadrillos Lab, wireframe. Autor: Diego Iván Ordoñez Vargas, 2026.</footer>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EcoLadrillos Lab: diseño instruccional</title>
+<style>
+:root{--ink:#2a2622;--paper:#f3f4ef;--soil:#7a4b2e;--moss:#4f6b3a;--sand:#d9c7a3;--line:#cfcbbf;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.6 "Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--soil)}
+a:focus-visible{outline:3px solid var(--moss);outline-offset:2px}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2}
+header{background:var(--soil);color:var(--white);padding:48px 24px 36px}
+.wrap{max-width:880px;margin:0 auto}
+h1{font-size:clamp(2rem,6vw,3.1rem);margin:0 0 10px}
+header p{margin:4px 0;max-width:62ch;color:#f6ece2}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px 24px;margin-top:18px;font-size:.95rem;color:#f6ece2}
+nav{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+nav .wrap{display:flex;flex-wrap:wrap;gap:4px 16px;padding:10px 24px;font-size:.92rem}
+nav a{text-decoration:none;padding:2px 0}
+nav a:hover{text-decoration:underline}
+main{padding:8px 24px 56px}
+section{padding:32px 0 8px;border-bottom:1px solid var(--line);scroll-margin-top:56px}
+h2{font-size:1.5rem;color:var(--soil);margin:0 0 10px}
+p{max-width:68ch}
+.note{border-left:5px solid var(--sand);background:var(--white);padding:10px 14px;max-width:68ch;font-size:.95rem}
+.seq{padding:0;list-style:none;margin:0}
+.seq li{border-left:6px solid var(--moss);padding:6px 0 6px 16px;margin:0 0 16px;max-width:70ch}
+.seq li:nth-child(2){border-color:var(--sand)}
+.seq li:nth-child(3){border-color:var(--soil)}
+.tablewrap{overflow-x:auto;margin:12px 0 24px}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.93rem;background:var(--white)}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--sand)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:200px;object-fit:cover;border-radius:8px;display:block}
+figcaption{font-size:.88rem;margin-top:6px}
+footer{padding:24px;text-align:center;font-size:.88rem;color:#5d584f}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<h1>EcoLadrillos Lab</h1>
+<p>Diseño instruccional de una app educativa que usa la elaboración de ecoladrillos como contexto para aprender sobre materiales, residuos y sostenibilidad.</p>
+<div class="meta">
+<span>Autor: Diego Iván Ordoñez Vargas</span>
+<span>Especialización en Didáctica y TIC, Universidad de Cartagena</span>
+<span>Asignatura: Aplicaciones móviles para la enseñanza</span>
+<span>Docente: Luisa Fernanda López Álvarez</span>
+</div>
+</div>
+</header>
+<nav aria-label="Secciones"><div class="wrap">
+<a href="#tema">Tema</a><a href="#publico">Público</a><a href="#problema">Problema</a><a href="#resultado">Resultado</a><a href="#evidencia">Evidencia</a><a href="#secuencia">Secuencia</a><a href="#evaluacion">Evaluación</a><a href="#funciones">Funcionalidades</a><a href="wireframe.html"><strong>Wireframe</strong></a>
+</div></nav>
+<main class="wrap">
+
+<section id="tema">
+<h2>Tema</h2>
+<p>Aprovechamiento de materiales y educación ambiental, trabajados a través del diseño de un ecoladrillo. En el proyecto del autor, estos ladrillos se elaboran con tierra, cemento, cascarilla de arroz, estiércol de caballo y otros compuestos naturales o residuales.</p>
+<p>Los ecoladrillos son el contexto de aprendizaje. La app los usa para que el estudiante relacione conceptos de ciencias (mezclas, propiedades de los materiales, residuos) con su entorno y reflexione sobre qué se puede reutilizar.</p>
+<p class="note">Alcance: la propuesta es pedagógica. No afirma que los ladrillos cuenten con validación estructural o de ingeniería, y el simulador de la app es una representación didáctica, no un ensayo técnico.</p>
+<div class="gallery">
+<figure><img src="images/ladrillos-cascarilla.jpg" alt="Tres ladrillos con orificios, elaborados con cascarilla de arroz" loading="lazy"><figcaption>Ladrillos con cascarilla de arroz.</figcaption></figure>
+<figure><img src="images/mezcla-carretilla.jpg" alt="Mezcla de componentes en una carretilla" loading="lazy"><figcaption>Mezcla de componentes en carretilla.</figcaption></figure>
+<figure><img src="images/recoleccion-tierra.jpg" alt="Persona recogiendo tierra en un camino" loading="lazy"><figcaption>Recolección de tierra.</figcaption></figure>
+<figure><img src="images/sedimentacion.jpg" alt="Prueba de sedimentación de tierra en un vaso de precipitados" loading="lazy"><figcaption>Prueba de sedimentación de una muestra de tierra.</figcaption></figure>
+</div>
+</section>
+
+<section id="publico">
+<h2>Público objetivo y contexto educativo</h2>
+<p>Estudiantes de educación básica secundaria (grados 8 y 9), con énfasis en instituciones rurales o de zonas con acceso limitado a laboratorios. En esos grados ya se trabajan proporciones, mezclas y propiedades de la materia, que son las ideas que la app necesita.</p>
+<p>La propuesta se piensa para celular, que suele ser el dispositivo disponible, y para conexión inestable: el contenido se descarga una vez y se consulta sin internet. Puede adaptarse a otras instituciones cambiando los materiales y las fotos locales, y también puede acompañar una clase de ciencias o de tecnología como complemento.</p>
+</section>
+
+<section id="problema">
+<h2>Problema de aprendizaje</h2>
+<p>En las clases de ciencias, las ideas de mezcla, propiedad de un material y aprovechamiento de residuos se explican con definiciones y ejemplos de libro, y pocas veces se conectan con los materiales que el estudiante conoce de su entorno. Sin laboratorio o con poco tiempo de práctica, quedan como conceptos que se memorizan y no se usan para tomar decisiones.</p>
+<p>La app busca atender esa necesidad: darle al estudiante una situación concreta, diseñar un ecoladrillo con materiales reales, para que aplique esos conceptos, observe, decida y explique sus razones, con la tecnología móvil como apoyo para quienes no tienen laboratorio.</p>
+</section>
+
+<section id="resultado">
+<h2>Resultado de aprendizaje</h2>
+<p><strong>Al finalizar la ruta, el estudiante diseña una mezcla de ecoladrillo a partir de las propiedades de sus componentes y justifica su elección con lo que observó y con criterios ambientales.</strong></p>
+<p>Es medible porque se puede comprobar en la ficha: qué componentes eligió, en qué proporción y qué razones da. El verbo "diseñar" corresponde al nivel de creación de la taxonomía de Bloom revisada (Anderson y Krathwohl, 2001), alcanzable en secundaria cuando la actividad es guiada.</p>
+</section>
+
+<section id="evidencia">
+<h2>Evidencia de aprendizaje</h2>
+<p>Una ficha de diseño dentro de la app con cuatro partes: la mezcla elegida (componentes y proporciones), las pruebas simuladas que hizo antes de decidir, la justificación de la elección y una reflexión breve sobre qué residuos aprovecha su mezcla.</p>
+</section>
+
+<section id="secuencia">
+<h2>Secuencia didáctica</h2>
+<ul class="seq">
+<li><strong>Exploración.</strong> El estudiante observa muestras de su entorno (tierra, arena, cascarilla, estiércol) con fotos y preguntas como "¿qué pasa si mojas un puñado de tierra?", y guarda sus observaciones. Se activan sus saberes previos y se plantea el reto de diseñar un ecoladrillo. Corresponde a la pantalla 3 de la app.</li>
+<li><strong>Aprendizaje.</strong> Microlecciones cortas, una por componente, que explican qué aporta cada uno a una mezcla y qué significa reutilizar un residuo. Cada microlección termina con una pregunta de comprensión que da retroalimentación al instante. Corresponde a la pantalla 4.</li>
+<li><strong>Práctica.</strong> En un simulador didáctico, el estudiante cambia las proporciones, compara los resultados de varios intentos y ajusta su decisión. Después completa su ficha de diseño. Es indagación guiada, con ensayo, observación y corrección. Corresponde a las pantallas 5 y 6.</li>
+</ul>
+<p>La secuencia sigue una lógica de aprendizaje basado en retos: el reto es una pregunta de diseño y cada momento aporta lo necesario para el siguiente. La práctica pide aplicar lo visto en el aprendizaje y retomar lo observado en la exploración.</p>
+</section>
+
+<section id="evaluacion">
+<h2>Estrategia de evaluación</h2>
+<p>Evaluación formativa durante la ruta, con una valoración final de la ficha mediante rúbrica.</p>
+<p>Se justifica así: el resultado es un diseño, y un diseño mejora al revisarlo, algo que una prueba final de selección múltiple no mide bien. Además, la retroalimentación oportuna sobre la tarea es una de las prácticas con mayor efecto sobre el aprendizaje (Black y Wiliam, 1998), y en contextos con poco acompañamiento la app debe darla en el momento en que el estudiante se equivoca.</p>
+<p><strong>Seguimiento:</strong> barra de progreso por estación, historial de las mezclas probadas y un resumen para el docente con las estaciones completadas. <strong>Retroalimentación:</strong> mensajes inmediatos en las preguntas de comprensión y en el simulador, y comentarios del docente sobre la ficha.</p>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Criterio de la ficha</th><th>Inicial</th><th>En proceso</th><th>Logrado</th></tr></thead>
+<tbody>
+<tr><td>Mezcla y proporciones</td><td>Nombra componentes sin proporciones</td><td>Da proporciones que no se relacionan con sus pruebas</td><td>Da proporciones coherentes con sus pruebas</td></tr>
+<tr><td>Justificación</td><td>Afirma que la mezcla "es buena" sin razones</td><td>Usa una propiedad de un componente</td><td>Explica con propiedades por qué descartó otra mezcla</td></tr>
+<tr><td>Reflexión ambiental</td><td>No menciona residuos</td><td>Nombra el residuo que usa</td><td>Explica qué aprovecha y qué problema ambiental atiende</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="funciones">
+<h2>Relación entre el diseño instruccional y la app</h2>
+<div class="tablewrap">
+<table>
+<thead><tr><th>Elemento del diseño</th><th>Funcionalidad prevista</th><th>Pantalla</th></tr></thead>
+<tbody>
+<tr><td>Exploración</td><td>Registro de observaciones con foto y opciones de respuesta</td><td>3</td></tr>
+<tr><td>Aprendizaje</td><td>Microlecciones por componente y preguntas con retroalimentación inmediata</td><td>4</td></tr>
+<tr><td>Práctica</td><td>Simulador didáctico de proporciones e historial de intentos</td><td>5</td></tr>
+<tr><td>Evidencia</td><td>Ficha de diseño que se puede descargar</td><td>6</td></tr>
+<tr><td>Seguimiento</td><td>Mapa de ruta con barra de progreso</td><td>2</td></tr>
+</tbody>
+</table>
+</div>
+<p>Las seis pantallas se dibujan en el <a href="wireframe.html">wireframe</a>.</p>
+</section>
+
+</main>
+<footer>EcoLadrillos Lab, propuesta de diseño instruccional. Autor: Diego Iván Ordoñez Vargas, 2026.</footer>
+</body>
+</html>
